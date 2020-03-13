@@ -1,0 +1,32 @@
+#!/bin/bash
+
+SOURCE=$1
+VOLUME=$2
+PREFIX=1
+
+usage () {
+  echo "Usage: copy-to-sdcard <source_dir> <dest_volume>"
+}
+
+copy_files () {
+  for fileName in `ls $1/`; do
+    if [ -f $1/$fileName ]; then
+      printf -v num '%04d' $PREFIX;
+      echo "cp $1/$fileName /Volumes/$VOLUME/$num.${fileName#*.}"
+      cp $1/$fileName /Volumes/$VOLUME/$num.${fileName#*.}
+      PREFIX=$((PREFIX+1))
+    fi
+
+    if [ -d $1/$fileName ]; then
+      copy_files "$1/$fileName"
+    fi
+  done
+}
+
+if [ "$1" == "" ] || [ "$2" == "" ]; then
+  usage
+  exit 1
+fi
+
+rm -r /Volumes/$VOLUME/*
+copy_files $SOURCE

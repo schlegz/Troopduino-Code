@@ -18,3 +18,27 @@ Features:
 </ul>
 
 https://github.com/BipeFlyer/Troopduino
+
+### Button Functionality
+
+- Button 1
+  - Long Press
+    - Normal Mode: PTT
+    - Config Mode: Cycle to next configuration
+  - Single Click
+    - Normal Mode: Play "move along" sound effect
+    - Config Mode: Increment current configuration value
+  - Double Click
+    - Normal Mode: Toggle PTT/voice activation mode
+- Button 2
+  - Long Press: Enter/exit config mode
+  - Single Click
+    - Normal Mode: Play "ask ID" sound effect
+    - Config Mode: Decrement current configuration value
+- Button 3
+  - Long Press: Enter Chatter Mode
+  - Single Click
+    - Normal Mode: Play "scream" sound effect
+- Button 4
+  - Single Click
+    - Normal Mode: Play "scream" sound effect    

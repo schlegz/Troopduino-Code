@@ -23,6 +23,6 @@ To properly format the SD card, run the following commands from a terminal (OSX)
   
 ### Background
 
-Troopduino requires all sound files to be in the root with filenames in the this sequential format `####.wav`, starting with
+Troopduino requires all sound files to be in the root with filenames in the sequential format `####.wav`, starting with
 `0001.wav`, which corresponds to track index 1 in the code.  Additionally, the files timestamps must be in increasing order as
 well, which the copy script takes care of.
